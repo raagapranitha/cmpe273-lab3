@@ -12,7 +12,7 @@ type Student {
 type Classs {
     classId: String!,
     name:String!,
-    students:[Student]
+    students:[String!]
 }
 
 type Mutation {
