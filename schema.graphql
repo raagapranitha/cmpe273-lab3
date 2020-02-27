@@ -1,0 +1,23 @@
+type Query {
+    student_with_id(_name: String): Student
+    class_with_id(_name:String) :Class
+}
+
+type Student {
+    studentId: ID,
+    name: String
+}
+
+type Class {
+    classId:ID
+    name:String
+    student:[]
+}
+
+type Mutation {
+        create_Student(studentName: String): Student
+}        
+
+type Mutation {
+        create_Class(className: String): Class
+}        
