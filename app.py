@@ -11,20 +11,25 @@ type_defs = load_schema_from_path('schema.graphql')
 query = QueryType()
 student = ObjectType('Student')
 
-quer2 = QueryType()
-classs=ObjectType('Class')
+queryClass = QueryType()
+classs = ObjectType('Classs')
 
-mutation1 = MutationType()
+
+mutation = MutationType()
 mutation.set_field('create_Student', r.resolver_createStudent)
 
-mutation2 = MutationType()
-mutation.set_field('create_Class', r.resolver_createClass)
+mutationClass = MutationType()
+mutationClass.set_field('create_Class', r.resolver_createClass)
+
+mutationAddStudentToClass =MutationType()
+mutationAddStudentToClass.set_field('add_Student_to_Class',r.resolver_add_student_to_class)
+
 
 query.set_field('student_with_id', r.student_with_id)
-query2.set_field('class_with_id', r.class_with_id)
+queryClass.set_field('class_with_id', r.class_with_id)
 
 
-schema = make_executable_schema(type_defs, [student, mutation, query,classs,mutation2,query2])
+schema = make_executable_schema(type_defs, [student, mutation, query,classs,mutationClass,queryClass,mutationAddStudentToClass])
 
 @app.route('/graphql', methods=['GET'])
 def playground():
