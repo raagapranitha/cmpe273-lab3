@@ -6,14 +6,30 @@ students = []
 classes= []
 
 def student_with_id(_,info, studentId):
-    for s in students:
-        if s.get('studentId')==studentId:
-            return s
+    # for s in students:
+    #     if s.get('studentId')==int(studentId):
+    # return s
+    for i in range(0,len(students)):
+        if students[i].get('studentId')==studentId :
+            return students[i]
+
+    # new_student={}
+    # new_student['studentId']=studentId
+    # new_student['studentName']=students[studentName]
+    # return new_student
 
 def class_with_id(_,info,classId):
-    for c in classes:
-        if c.get('classId')==classId:
-            return c
+    # for c in classes:
+    #     if c.get('classId')==int(classId):
+    #         return c
+    # new_class={}
+    # new_class['studentId']=classId
+    # new_class['className']=classs[className]
+    # return new_class
+
+    for i in range(0,len(classes)):
+        if classes[i].get('classId')==classId :
+            return classes[i]
 
 
 def resolver_createStudent(_,info, studentName):
