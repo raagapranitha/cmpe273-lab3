@@ -6,13 +6,13 @@ type Query {
 
 type Student {
     studentId: String!,
-    name: String!
+    studentName: String!
 }
 
 type Classs {
     classId: String!,
-    name:String!,
-    students:[String!]
+    className:String!,
+    students:[Student!]
 }
 
 type Mutation {
